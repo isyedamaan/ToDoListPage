@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: #121212;
+    color: #e8eaed;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+
+#pageTitle {
+    font-size: 3em;
+    color: #e8eaed;
+    margin-top: 20px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.button-container {
+    display: flex; /* Aligns children (buttons) in a row */
+    justify-content: space-between; /* Centers the buttons horizontally */
+    width: (100%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.top-buttons {
+    background-color: #333; /* Dark grey background */
+    color: #e8eaed;
+    width: 120px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px #1c1c1c; /* Simulates depth */
+    text-shadow: 0px 1px 1px #000; /* Gives text a raised effect */
+    transition: all 0.3s ease;
+}
+
+#addNoteBtn:hover {
+    background-color: #4a4a4a; /* Slightly lighter grey on hover */
+    box-shadow: 0 2px #1c1c1c;
+}
+
+#addNoteBtn:active {
+    box-shadow: 0 1px #1c1c1c; /* Smaller shadow to simulate button press */
+    transform: translateY(2px); /* Simulates the pressing of the button */
+}
+
+
+#notesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your preference */
+    padding: 10px;
+}
+
+.note {
+    background-color: #252525;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* Remove fixed height or height calculation */
+}
+
+.note-title, .note-item .item-text {
+    width:100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0; 
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    color: #e8eaed;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.note-title{
+    margin-bottom: 15px;    
+    font-size: large;
+}
+
+.note-title-filled {
+    background-color: #252525;
+    
+}
+
+.note button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes the button circular */
+    background-color: #252525; /* Green background */
+    color: #e8eaed; /* White text */
+    border: none;
+    font-size: 20px; /* Larger font for the plus sign */
+    cursor: pointer;
+    margin: 10px 0px 10px 0px;
+}
+
+.note .minus-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes the button circular */
+    background-color: #252525; /* Green background */
+    color: #e8eaed; /* White text */
+    border: none;
+    font-size: 20px; /* Larger font for the plus sign */
+    cursor: pointer;
+    margin: 10px 0px 10px 0px;
+}
+
+.note .sort-items-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 30px;
+    border-radius: 5px; /* Circular button */
+    background-color: #252525; /* Different color to distinguish from add-item button */
+    color: #e8eaed;
+    border: none;
+    font-weight: bold;
+    font-size: 12px; /* Size of the sort icon or text */
+    cursor: pointer;
+    margin: 10px;
+}
+
+.note button:hover{
+    background-color: #333;
+}
+
+.note button:active{
+    background-color: #4a4a4a;
+}
+
+.note-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.note-item .item-text {
+    flex-grow: 2;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 0px solid #555; /* Optional, for a more defined border */
+    background-color: #333;
+    color: #cccccd;
+}
+.note-item .filled-item-text {
+    background-color: #252525;
+}
+.note-item .filled-item-text:hover{
+    border: 1px solid #555;
+}
+
+.note-item input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    flex-grow: 1;
+    height: 8px;
+    border-radius: 5px;
+    /* background: linear-gradient(to right, red, orange, yellow, green); */
+    background: #1a1a1a;
+    outline: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.note-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--thumb-color, #ff0);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.note-item input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--thumb-color, #ff0);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.note-item input[type="range"]::-moz-range-track {
+    /* background: linear-gradient(to right, red, orange, yellow, green); */
+    background: #1a1a1a;
+}
+
+
