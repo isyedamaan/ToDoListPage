@@ -184,8 +184,9 @@ function loadNotes() {
             noteData.items.forEach(itemData => {
                 const item = addItem(note.querySelector('.add-item-btn'));
                 item.querySelector('.item-text').value = itemData.description;
-                item.querySelector('.item-text').classList.add('filled-item-text')
+                item.querySelector('.item-text').classList.add('filled-item-text');
                 item.querySelector('.item-slider').value = itemData.sliderValue;
+                updateSliderThumbColor(item.querySelector('.item-slider');
             });
         });
     }
