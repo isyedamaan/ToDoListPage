@@ -186,7 +186,7 @@ function loadNotes() {
                 item.querySelector('.item-text').value = itemData.description;
                 item.querySelector('.item-text').classList.add('filled-item-text');
                 item.querySelector('.item-slider').value = itemData.sliderValue;
-                updateSliderThumbColor(item.querySelector('.item-slider');
+                updateSliderThumbColor(item.querySelector('.item-slider'));
             });
         });
     }
